@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DatabaseInitializer.cs" />
+    <Compile Remove="PathHelper.cs" />
+    <Compile Remove="SchemaSql.cs" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\TiendaApp.Servicio\TiendaApp.Servicio.csproj" />
+    <ProjectReference Include="..\TiendaApp.Repositorio\TiendaApp.Repositorio.csproj" />
+    <ProjectReference Include="..\TiendaApp.Contrato\TiendaApp.Contrato.csproj" />
+    <ProjectReference Include="..\TiendaApp.Modelo\TiendaApp.Modelo.csproj" />
+    <ProjectReference Include="..\TiendaApp.Utilidad\TiendaApp.Utilidad.csproj" />
+    <ProjectReference Include="..\TiendaApp.UI\TiendaApp.UI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.0" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <StartupObject>TiendaApp.Login.App</StartupObject>
+  </PropertyGroup>
+
+</Project>
