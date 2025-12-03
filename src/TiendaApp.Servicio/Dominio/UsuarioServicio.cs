@@ -24,6 +24,11 @@ namespace TiendaApp.Servicio.Dominio
             return await usuarioRepositorio.GetByNameAsync(nombre);
         }
 
+        public async Task<Usuario?> GetByDNIAsync(string dni)
+        {
+            return await usuarioRepositorio.GetByDNIAsync(dni);
+        }
+
         public async Task<int> CreateAsync(Usuario usuario)
         {
             usuario.Password = PasswordHasher.Hash(usuario.Password);
