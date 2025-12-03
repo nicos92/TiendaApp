@@ -35,7 +35,6 @@ namespace TiendaApp.Login
 
             var dbInit = HostApp.Services.GetRequiredService<DatabaseInitializer>();
             dbInit.Initialize();     // ← Crea DB + Tablas si no existen
-            MessageBox.Show("OnStartup ejecutado");
             await HostApp.StartAsync();
 
             // Abrir ventana inicial (por ejemplo Login)
@@ -47,7 +46,6 @@ namespace TiendaApp.Login
 
         protected override async void OnExit(ExitEventArgs e)
         {
-            MessageBox.Show("Onexit ejecutado");
             if (HostApp != null)
             {
                 await HostApp.StopAsync();
