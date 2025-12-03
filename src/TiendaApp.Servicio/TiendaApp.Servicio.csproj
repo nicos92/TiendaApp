@@ -4,6 +4,11 @@
     <ProjectReference Include="..\TiendaApp.Repositorio\TiendaApp.Repositorio.csproj" />
     <ProjectReference Include="..\TiendaApp.Contrato\TiendaApp.Contrato.csproj" />
     <ProjectReference Include="..\TiendaApp.Modelo\TiendaApp.Modelo.csproj" />
+    <ProjectReference Include="..\TiendaApp.Utilidad\TiendaApp.Utilidad.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Dominio\" />
   </ItemGroup>
 
   <PropertyGroup>

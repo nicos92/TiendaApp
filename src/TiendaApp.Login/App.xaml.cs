@@ -1,17 +1,17 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
-using TiendaApp.Login;
 using TiendaApp.Repositorio.DataInit;
 
-namespace TiendaApp.UI
+namespace TiendaApp.Login
 {
     public partial class App : Application
     {
         public static IHost HostApp { get; private set; }
 
-        public App()
+        protected override async void OnStartup(StartupEventArgs e)
         {
+            // Inicializar el host aquí para evitar problemas de orden de ejecución
             HostApp = Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>
                 {
@@ -22,7 +22,6 @@ namespace TiendaApp.UI
                     //services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
                     //services.AddTransient<IArticuloRepositorio, ArticuloRepositorio>();
                     //services.AddTransient<IVentaRepositorio, VentaRepositorio>();
-                    MessageBox.Show("App ejecutado");
                     //// Registrar servicios
                     //services.AddTransient<IUsuarioServicio, UsuarioServicio>();
                     //services.AddTransient<IArticuloServicio, ArticuloServicio>();
@@ -33,10 +32,7 @@ namespace TiendaApp.UI
                     services.AddTransient<LoginWindow>();
                 })
                 .Build();
-        }
 
-        protected override async void OnStartup(StartupEventArgs e)
-        {
             var dbInit = HostApp.Services.GetRequiredService<DatabaseInitializer>();
             dbInit.Initialize();     // ← Crea DB + Tablas si no existen
             MessageBox.Show("OnStartup ejecutado");
@@ -52,8 +48,11 @@ namespace TiendaApp.UI
         protected override async void OnExit(ExitEventArgs e)
         {
             MessageBox.Show("Onexit ejecutado");
-            await HostApp.StopAsync();
-            HostApp.Dispose();
+            if (HostApp != null)
+            {
+                await HostApp.StopAsync();
+                HostApp.Dispose();
+            }
             base.OnExit(e);
         }
     }

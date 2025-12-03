@@ -3,9 +3,6 @@ namespace TiendaApp.Repositorio.DataInit
     public static class SchemaSql
     {
         public const string CreateTables = @"
--- ==========================================
--- Tablas
--- ==========================================
 
 CREATE TABLE IF NOT EXISTS Usuarios(
     Id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -47,10 +44,6 @@ CREATE TABLE IF NOT EXISTS VentaDetalle(
     FOREIGN KEY(ArticuloId) REFERENCES Articulos(Id)
 );
 
--- ==========================================
--- Inserts iniciales (solo si no existen)
--- ==========================================
-
 INSERT INTO Roles (Nombre)
 SELECT 'superadministrador'
 WHERE NOT EXISTS (SELECT 1 FROM Roles WHERE Nombre = 'superadministrador');
@@ -75,10 +68,6 @@ INSERT INTO Roles (Nombre)
 SELECT 'empleado'
 WHERE NOT EXISTS (SELECT 1 FROM Roles WHERE Nombre = 'empleado');
 
--- ==========================================
--- Usuarios con contraseña hash PBKDF2
--- ==========================================
-
 INSERT INTO Usuarios (Nombre, Password)
 SELECT 'superadmin', '100000.wJN6ViU+vJ6fR9bC2zZc6w==.qLUh1qiDKoJKrjlQ5qjy5i3VeKqsXWDhyehV+CTvHdI='
 WHERE NOT EXISTS (SELECT 1 FROM Usuarios WHERE Nombre = 'superadmin');
@@ -102,11 +91,6 @@ WHERE NOT EXISTS (SELECT 1 FROM Usuarios WHERE Nombre = 'encargado');
 INSERT INTO Usuarios (Nombre, Password)
 SELECT 'empleado', '100000.0g4m7x36yFlXHADKFkC1SQ==.Ma9iAHuPGrfG8i2yPMAVIgFk0YuBB1B2Mpk8keMQKSI='
 WHERE NOT EXISTS (SELECT 1 FROM Usuarios WHERE Nombre = 'empleado');
-
-
--- ==========================================
--- Relacionar usuario → rol
--- ==========================================
 
 INSERT INTO UsuariosRoles (UsuarioId, RolId)
 SELECT u.Id, r.Id

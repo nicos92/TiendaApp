@@ -1,6 +1,6 @@
 using Microsoft.Data.Sqlite;
-using System.Data.SQLite;
 using System.IO;
+using SQLitePCL;
 
 namespace TiendaApp.Repositorio.DataInit
 {
@@ -11,6 +11,7 @@ namespace TiendaApp.Repositorio.DataInit
         public DatabaseInitializer()
         {
             _dbPath = PathHelper.GetDatabasePath();
+            Batteries.Init(); // Inicializar el proveedor de SQLite
         }
 
         public void Initialize()
@@ -18,7 +19,7 @@ namespace TiendaApp.Repositorio.DataInit
             bool isNew = !File.Exists(_dbPath);
 
             if (isNew)
-                SQLiteConnection.CreateFile(_dbPath);
+                File.Create(_dbPath).Dispose(); // Crear archivo de base de datos
 
             using var con = new SqliteConnection($"Data Source={_dbPath}");
             con.Open();

@@ -22,7 +22,6 @@ namespace TiendaApp.Repositorio.DataInit
         public static string GetDatabasePath()
         {
             string rutaDB = Path.Combine(GetAppDataFolder(), DatabaseFileName);
-            Console.WriteLine("Ruta del Archivo: " + Path.Combine(GetAppDataFolder(), DatabaseFileName));
             return rutaDB;
         }
     }
