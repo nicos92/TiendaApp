@@ -71,27 +71,27 @@ SELECT 'empleado'
 WHERE NOT EXISTS (SELECT 1 FROM Roles WHERE Nombre = 'empleado');
 
 INSERT INTO Usuarios (Nombre, Apellido, DNI, Password)
-SELECT 'superadmin', 'Super', '00000000', '100000.wJN6ViU+vJ6fR9bC2zZc6w==.qLUh1qiDKoJKrjlQ5qjy5i3VeKqsXWDhyehV+CTvHdI='
+SELECT 'superadmin', 'Super', '00000000', '100000.wfAOkhEBe4o8IPAdK02Mfw==.eKXotWkGjpW6k6SeVIuvK7CFdCGS+oLjJ/IXgfES8t4='
 WHERE NOT EXISTS (SELECT 1 FROM Usuarios WHERE Nombre = 'superadmin');
 
 INSERT INTO Usuarios (Nombre, Apellido, DNI, Password)
-SELECT 'admin', 'Administrador', '11111111', '100000.Y3GvwTgJ7VyVLULCChFqHw==.tsnhVRmcSR8c0nDXmKxx6YGo2JogB2C021/Cr8YWmy8='
+SELECT 'admin', 'Administrador', '11111111', '100000.YN0lzjO2GJfwD+9vQgCEgw==.Xvf0UIHx6JuC+6JYPtOFw1ukx69rUXlpCafks+KQpJ8='
 WHERE NOT EXISTS (SELECT 1 FROM Usuarios WHERE Nombre = 'admin');
 
 INSERT INTO Usuarios (Nombre, Apellido, DNI, Password)
-SELECT 'gerente', 'Gerente', '22222222', '100000.9IjldYgrPkdLJRDXyF0ihA==.n61Vb7SJxwwO0MCqK0NqODtm8yUggYOBn3bEzGXawlE='
+SELECT 'gerente', 'Gerente', '22222222', '100000.tFZZOprs/uOyHrIEIgHsAA==.+s7c3nwXbVzifLStJvedBDixiZKiRf0AASGBEY3PTXI='
 WHERE NOT EXISTS (SELECT 1 FROM Usuarios WHERE Nombre = 'gerente');
 
 INSERT INTO Usuarios (Nombre, Apellido, DNI, Password)
-SELECT 'supervisor', 'Supervisor', '33333333', '100000.KmT9vWcKnfEVPecEzJxHrA==.h6UsJFlCy8YVm2pmDRVHyTqQ6JJxdS1fX3baQS5VE0U='
+SELECT 'supervisor', 'Supervisor', '33333333', '100000.agAxrn926Jr2EAoQRwPRyA==.o/Sk224Fiqnvz4CACsmSCzecP7G15iMloyv0SojC1go='
 WHERE NOT EXISTS (SELECT 1 FROM Usuarios WHERE Nombre = 'supervisor');
 
 INSERT INTO Usuarios (Nombre, Apellido, DNI, Password)
-SELECT 'encargado', 'Encargado', '44444444', '100000.0Ty0YpNszl7hLjKZfEN5Gw==.tsF7XcrrrN2V3slmytYH8HFcY/HzMhPgH9MgfHBMU2I='
+SELECT 'encargado', 'Encargado', '44444444', '100000.3y7VhOar2xh705K8QzKSRg==.uHKuAHaM8vwPYJiHJrbwB+LrydiDSW9YCaRfMJ8Xszo='
 WHERE NOT EXISTS (SELECT 1 FROM Usuarios WHERE Nombre = 'encargado');
 
 INSERT INTO Usuarios (Nombre, Apellido, DNI, Password)
-SELECT 'empleado', 'Empleado', '55555555', '100000.0g4m7x36yFlXHADKFkC1SQ==.Ma9iAHuPGrfG8i2yPMAVIgFk0YuBB1B2Mpk8keMQKSI='
+SELECT 'empleado', 'Empleado', '55555555', '100000.wQ94MblQeZL+105iUbGiAw==.+twXq+mN3mS56xzFKPw50EBehnXW/z3qcNyZD7w5/9g='
 WHERE NOT EXISTS (SELECT 1 FROM Usuarios WHERE Nombre = 'empleado');
 
 INSERT INTO UsuariosRoles (UsuarioId, RolId)

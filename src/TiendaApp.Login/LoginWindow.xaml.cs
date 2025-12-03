@@ -1,28 +1,77 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using TiendaApp.Contrato.IServicio;
+using TiendaApp.Modelo.Entities;
 
 namespace TiendaApp.Login
 {
     /// <summary>
     /// Lógica de interacción para LoginWindow.xaml
-    /// bool valido = PasswordHasher.Verify(passwordIngresada, usuario.Password);
     /// </summary>
     public partial class LoginWindow : Window
     {
-        public LoginWindow()
+        private readonly IUsuarioServicio _usuarioServicio;
+
+        public LoginWindow(IUsuarioServicio usuarioServicio)
         {
+            _usuarioServicio = usuarioServicio;
             InitializeComponent();
+            InitializeEventHandlers();
+        }
+
+        private void InitializeEventHandlers()
+        {
+            BtnLogin.Click += BtnLogin_Click;
+            BtnRecuperarContrasena.Click += BtnRecuperarContrasena_Click;
+        }
+
+        private async void BtnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string dni = TxtDni.Text.Trim();
+                string password = TxtPass.Password.Trim();
+
+                if (string.IsNullOrEmpty(dni) || string.IsNullOrEmpty(password))
+                {
+                    MessageBox.Show("Por favor, ingrese DNI y contraseña.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                // Buscar el usuario por DNI
+                Usuario? usuario = await _usuarioServicio.GetByDNIAsync(dni);
+
+                if (usuario == null)
+                {
+                    MessageBox.Show("DNI o contraseña incorrectos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                // Validar credenciales
+                Usuario? usuarioValidado = await _usuarioServicio.ValidateCredentialsAsync(usuario.Nombre, password);
+
+                if (usuarioValidado != null)
+                {
+                    MessageBox.Show($"¡Bienvenido, {usuario.Nombre} {usuario.Apellido}!", "Inicio de sesión exitoso", MessageBoxButton.OK, MessageBoxImage.Information);
+                    // Aquí puedes abrir la ventana principal de la aplicación
+                    // Por ahora simplemente cerramos esta ventana
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("DNI o contraseña incorrectos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al iniciar sesión: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void BtnRecuperarContrasena_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Funcionalidad de recuperación de contraseña no implementada.", "Recuperar Contraseña", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

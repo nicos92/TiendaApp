@@ -1,7 +1,11 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
+using TiendaApp.Contrato.IRepositorio;
+using TiendaApp.Contrato.IServicio;
 using TiendaApp.Repositorio.DataInit;
+using TiendaApp.Repositorio.Repositorios;
+using TiendaApp.Servicio.Dominio;
 
 namespace TiendaApp.Login
 {
@@ -19,12 +23,12 @@ namespace TiendaApp.Login
                     services.AddSingleton<DatabaseInitializer>();
 
                     //// Registrar repositorios
-                    //services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
-                    //services.AddTransient<IArticuloRepositorio, ArticuloRepositorio>();
-                    //services.AddTransient<IVentaRepositorio, VentaRepositorio>();
+                    services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
+                    services.AddTransient<IArticuloRepositorio, ArticuloRepositorio>();
+                    services.AddTransient<IVentaRepositorio, VentaRepositorio>();
                     //// Registrar servicios
-                    //services.AddTransient<IUsuarioServicio, UsuarioServicio>();
-                    //services.AddTransient<IArticuloServicio, ArticuloServicio>();
+                    services.AddTransient<IUsuarioServicio, UsuarioServicio>();
+                    services.AddTransient<IArticuloServicio, ArticuloServicio>();
                     //services.AddTransient<IVentaServicio, VentaServicio>();
 
                     // Registrar ventanas

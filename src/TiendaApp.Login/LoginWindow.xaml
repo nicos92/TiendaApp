@@ -5,9 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TiendaApp.Login"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
-    <Grid>
-        <Label Content="Login.LoginWindow" HorizontalAlignment="Left" Margin="115,0,0,0" VerticalAlignment="Center" FontSize="72"/>
+        Title="LoginWindow" Height="450" FontSize="16" Background="#FF191D21" Foreground="#FFF8F9FA" MinWidth="800" Width="800" MinHeight="450" MaxWidth="800" MaxHeight="450" Padding="2,2,2,2">
+    <StackPanel Height="300" Width="700" Background="#FF212529">
+        <Label Content="Inicio de Sesión" HorizontalAlignment="Center" Foreground="#FFF8F9FA" FontSize="36" Margin="0,8,0,0" FontWeight="Bold"/>
+        <Label Content="DNI:" Foreground="#FFF8F9FA" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,8,0,0"/>
+        <TextBox x:Name="TxtDni" TextWrapping="Wrap" Text="TextBox" Width="120" Background="#FF191D21" Foreground="#FFF8F9FA" BorderThickness="8,1,1,1" Margin="0,8,0,0"/>
+        <Label Content="Contraseña:" Foreground="#FFF8F9FA" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,8,0,0"/>
+        <PasswordBox x:Name="TxtPass" Width="120" Background="#FF191D21" Foreground="#FFF8F9FA"/>
+        <Button x:Name="BtnLogin" Content="Iniciar Sesión" Width="128" Margin="0,8,0,0" Background="#FF0D6EFD" Foreground="#FFF8F9FA" FontSize="18"/>
+        <Button x:Name="BtnRecuperarContrasena" Content="Recuperar Contraseña" Width="256" Background="#000D6EFD" Foreground="#FFF8F9FA" FontSize="16" Margin="0,8,0,0"/>
+    </StackPanel>
 
-    </Grid>
 </Window>
