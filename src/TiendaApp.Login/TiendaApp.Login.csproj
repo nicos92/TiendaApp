@@ -1,6 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\TiendaApp.Resources\TiendaApp.Resources.csproj" />
+    <ProjectReference Include="..\TiendaApp.Resources\TiendaApp.Resources.csproj" />
     <ProjectReference Include="..\TiendaApp.Servicio\TiendaApp.Servicio.csproj" />
     <ProjectReference Include="..\TiendaApp.Repositorio\TiendaApp.Repositorio.csproj" />
     <ProjectReference Include="..\TiendaApp.Contrato\TiendaApp.Contrato.csproj" />

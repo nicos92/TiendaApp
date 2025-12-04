@@ -16,6 +16,7 @@
     <Compile Remove="DatabaseInitializer.cs" />
     <Compile Remove="PathHelper.cs" />
     <Compile Remove="SchemaSql.cs" />
+    <Compile Remove="ThemeManager.cs" />
   </ItemGroup>
 
 </Project>

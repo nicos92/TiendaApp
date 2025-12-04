@@ -1,13 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <Page Remove="resources\styles\ButtonStyles.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="resources\styles\ButtonStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
+    <Compile Remove="resources\**" />
+    <EmbeddedResource Remove="resources\**" />
+    <None Remove="resources\**" />
+    <Page Remove="resources\**" />
   </ItemGroup>
 
   <ItemGroup>
