@@ -5,6 +5,7 @@ using TiendaApp.Contrato.IRepositorio;
 using TiendaApp.Contrato.IServicio;
 using TiendaApp.Repositorio.DataInit;
 using TiendaApp.Repositorio.Repositorios;
+using TiendaApp.Resources;
 using TiendaApp.Servicio.Dominio;
 
 namespace TiendaApp.Login
@@ -40,6 +41,9 @@ namespace TiendaApp.Login
             var dbInit = HostApp.Services.GetRequiredService<DatabaseInitializer>();
             dbInit.Initialize();     // ← Crea DB + Tablas si no existen
             await HostApp.StartAsync();
+
+            // Inicializar el ThemeManager después de que se configuren los servicios
+            ThemeManager.Initialize();
 
             // Abrir ventana inicial (por ejemplo Login)
             var login = HostApp.Services.GetRequiredService<LoginWindow>();

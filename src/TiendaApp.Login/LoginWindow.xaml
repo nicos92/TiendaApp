@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TiendaApp.Login"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" FontSize="16" Background="#FF191D21" Foreground="#FFF8F9FA" MinWidth="800" Width="800" MinHeight="450" MaxWidth="800" MaxHeight="450" Padding="2,2,2,2">
-    <StackPanel Height="300" Width="700" Background="#FF212529">
-        <Label Content="Inicio de Sesión" HorizontalAlignment="Center" Foreground="#FFF8F9FA" FontSize="36" Margin="0,8,0,0" FontWeight="Bold"/>
-        <Label Content="DNI:" Foreground="#FFF8F9FA" FontSize="20" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,8,0,0" RenderTransformOrigin="0.5,0.5">
+        Title="LoginWindow" Height="500" FontSize="16" Background="{DynamicResource SurfaceDimBrush}" Foreground="{DynamicResource OnSurfaceBrush}" MinWidth="800" Width="800" MinHeight="500" MaxWidth="800" MaxHeight="500" Padding="2,2,2,2">
+    <StackPanel Height="400" Width="700" Background="{DynamicResource SurfaceContainerBrush}" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Label Content="Inicio de Sesión" HorizontalAlignment="Center" Foreground="{DynamicResource OnSurfaceBrush}" FontSize="36" Margin="0,48,0,8" FontWeight="Bold"/>
+        <Label Content="DNI:" Foreground="{DynamicResource OnSurfaceBrush}" FontSize="20" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,8,0,0" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -18,8 +18,8 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="TxtDni" TextWrapping="Wrap" Width="256" Background="#FF191D21" Foreground="#FFF8F9FA" BorderThickness="0,0,0,4" Margin="0,8,0,0"/>
-        <Label Content="Contraseña:" Foreground="#FFF8F9FA" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Center" Margin="0,8,0,0" RenderTransformOrigin="0.5,0.5">
+        <TextBox x:Name="TxtDni" TextWrapping="Wrap" Width="256" Background="{DynamicResource SurfaceDimBrush}" Foreground="{DynamicResource OnSurfaceBrush}" BorderThickness="1,1,1,4" Margin="0,8,0,0"/>
+        <Label Content="Contraseña:" Foreground="{DynamicResource OnSurfaceBrush}" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Center" Margin="0,8,0,0" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -29,12 +29,12 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <PasswordBox x:Name="TxtPass" Width="256" Background="#FF191D21" Foreground="#FFF8F9FA" BorderThickness="0,0,0,4"/>
-        <Button x:Name="BtnLogin" Content="Iniciar Sesión" Width="156" Margin="0,8,0,0" Foreground="#FFF8F9FA" FontSize="18" BorderBrush="{x:Null}" Height="36">
+        <PasswordBox x:Name="TxtPass" Width="256" Background="{DynamicResource SurfaceDimBrush}" Foreground="{DynamicResource OnSurfaceBrush}" BorderThickness="1,1,1,4"/>
+        <Button x:Name="BtnLogin" Content="Iniciar Sesión" Width="156" Margin="0,8,0,0" Foreground="{DynamicResource OnPrimaryContainerBrush}" FontSize="20" FontWeight="Bold" BorderBrush="{x:Null}" Height="36">
             <Button.Background>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,1">
-                    <GradientStop Color="#FF0D6EFD" Offset="0"/>
-                    <GradientStop Color="#FF0A58CA" Offset="1"/>
+                    <GradientStop Color="{DynamicResource PrimaryContainer}" Offset="0"/>
+                    <GradientStop Color="{DynamicResource InversePrimary}" Offset="1"/>
                 </LinearGradientBrush>
             </Button.Background>
             <Button.Template>
@@ -49,8 +49,8 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#FF4CAF50"/>
-                            <Setter TargetName="border" Property="BorderBrush" Value="DarkGreen"/>
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource InversePrimaryBrush}"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource InversePrimaryBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -69,8 +69,8 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#FF4CAF50"/>
-                            <Setter TargetName="border" Property="BorderBrush" Value="DarkGreen"/>
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource SecondaryContainerBrush}"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource SecondaryContainerBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

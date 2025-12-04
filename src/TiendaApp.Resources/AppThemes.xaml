@@ -45,12 +45,42 @@
 
         <!-- Pinceles basados en colores -->
         <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource Background}"/>
-        <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
-        <SolidColorBrush x:Key="OnPrimaryBrush" Color="{StaticResource OnPrimary}"/>
-        <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource Surface}"/>
-        <SolidColorBrush x:Key="OnSurfaceBrush" Color="{StaticResource OnSurface}"/>
         <SolidColorBrush x:Key="ErrorBrush" Color="{StaticResource Error}"/>
+        <SolidColorBrush x:Key="ErrorContainerBrush" Color="{StaticResource ErrorContainer}"/>
+        <SolidColorBrush x:Key="InverseOnSurfaceBrush" Color="{StaticResource InverseOnSurface}"/>
+        <SolidColorBrush x:Key="InversePrimaryBrush" Color="{StaticResource InversePrimary}"/>
+        <SolidColorBrush x:Key="InverseSurfaceBrush" Color="{StaticResource InverseSurface}"/>
+        <SolidColorBrush x:Key="OnBackgroundBrush" Color="{StaticResource OnBackground}"/>
         <SolidColorBrush x:Key="OnErrorBrush" Color="{StaticResource OnError}"/>
+        <SolidColorBrush x:Key="OnErrorContainerBrush" Color="{StaticResource OnErrorContainer}"/>
+        <SolidColorBrush x:Key="OnPrimaryBrush" Color="{StaticResource OnPrimary}"/>
+        <SolidColorBrush x:Key="OnPrimaryContainerBrush" Color="{StaticResource OnPrimaryContainer}"/>
+        <SolidColorBrush x:Key="OnSecondaryBrush" Color="{StaticResource OnSecondary}"/>
+        <SolidColorBrush x:Key="OnSecondaryContainerBrush" Color="{StaticResource OnSecondaryContainer}"/>
+        <SolidColorBrush x:Key="OnSurfaceBrush" Color="{StaticResource OnSurface}"/>
+        <SolidColorBrush x:Key="OnSurfaceVariantBrush" Color="{StaticResource OnSurfaceVariant}"/>
+        <SolidColorBrush x:Key="OnTertiaryBrush" Color="{StaticResource OnTertiary}"/>
+        <SolidColorBrush x:Key="OnTertiaryContainerBrush" Color="{StaticResource OnTertiaryContainer}"/>
+        <SolidColorBrush x:Key="OutlineBrush" Color="{StaticResource Outline}"/>
+        <SolidColorBrush x:Key="OutlineVariantBrush" Color="{StaticResource OutlineVariant}"/>
+        <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
+        <SolidColorBrush x:Key="PrimaryContainerBrush" Color="{StaticResource PrimaryContainer}"/>
+        <SolidColorBrush x:Key="ScrimBrush" Color="{StaticResource Scrim}"/>
+        <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
+        <SolidColorBrush x:Key="SecondaryContainerBrush" Color="{StaticResource SecondaryContainer}"/>
+        <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource Surface}"/>
+        <SolidColorBrush x:Key="SurfaceTintBrush" Color="{StaticResource SurfaceTint}"/>
+        <SolidColorBrush x:Key="SurfaceVariantBrush" Color="{StaticResource SurfaceVariant}"/>
+        <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>
+        <SolidColorBrush x:Key="TertiaryContainerBrush" Color="{StaticResource TertiaryContainer}"/>
+        <!-- Pinceles para Superficies adicionales -->
+        <SolidColorBrush x:Key="SurfaceBrightBrush" Color="{StaticResource SurfaceBright}"/>
+        <SolidColorBrush x:Key="SurfaceDimBrush" Color="{StaticResource SurfaceDim}"/>
+        <SolidColorBrush x:Key="SurfaceContainerBrush" Color="{StaticResource SurfaceContainer}"/>
+        <SolidColorBrush x:Key="SurfaceContainerHighBrush" Color="{StaticResource SurfaceContainerHigh}"/>
+        <SolidColorBrush x:Key="SurfaceContainerHighestBrush" Color="{StaticResource SurfaceContainerHighest}"/>
+        <SolidColorBrush x:Key="SurfaceContainerLowBrush" Color="{StaticResource SurfaceContainerLow}"/>
+        <SolidColorBrush x:Key="SurfaceContainerLowestBrush" Color="{StaticResource SurfaceContainerLowest}"/>
     </ResourceDictionary>
 
     <!-- Tema Oscuro -->
@@ -65,13 +95,13 @@
         <Color x:Key="OnBackground">#E4E2E6</Color>
         <Color x:Key="OnError">#690005</Color>
         <Color x:Key="OnErrorContainer">#FFDAD6</Color>
-        <Color x:Key="OnPrimary">#002C72</Color>
+        <Color x:Key="OnPrimary">#FFFFFFFF</Color>
         <Color x:Key="OnPrimaryContainer">#DAE2FF</Color>
-        <Color x:Key="OnSecondary">#26304A</Color>
+        <Color x:Key="OnSecondary">#FFFFFFFF</Color>
         <Color x:Key="OnSecondaryContainer">#DAE2FF</Color>
         <Color x:Key="OnSurface">#E4E2E6</Color>
         <Color x:Key="OnSurfaceVariant">#C7C6CA</Color>
-        <Color x:Key="OnTertiary">#472249</Color>
+        <Color x:Key="OnTertiary">#FFFFFFFF</Color>
         <Color x:Key="OnTertiaryContainer">#FFD6FA</Color>
         <Color x:Key="Outline">#919094</Color>
         <Color x:Key="OutlineVariant">#484C59</Color>
@@ -97,12 +127,42 @@
 
         <!-- Pinceles basados en colores -->
         <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource Background}"/>
-        <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
-        <SolidColorBrush x:Key="OnPrimaryBrush" Color="{StaticResource OnPrimary}"/>
-        <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource Surface}"/>
-        <SolidColorBrush x:Key="OnSurfaceBrush" Color="{StaticResource OnSurface}"/>
         <SolidColorBrush x:Key="ErrorBrush" Color="{StaticResource Error}"/>
+        <SolidColorBrush x:Key="ErrorContainerBrush" Color="{StaticResource ErrorContainer}"/>
+        <SolidColorBrush x:Key="InverseOnSurfaceBrush" Color="{StaticResource InverseOnSurface}"/>
+        <SolidColorBrush x:Key="InversePrimaryBrush" Color="{StaticResource InversePrimary}"/>
+        <SolidColorBrush x:Key="InverseSurfaceBrush" Color="{StaticResource InverseSurface}"/>
+        <SolidColorBrush x:Key="OnBackgroundBrush" Color="{StaticResource OnBackground}"/>
         <SolidColorBrush x:Key="OnErrorBrush" Color="{StaticResource OnError}"/>
+        <SolidColorBrush x:Key="OnErrorContainerBrush" Color="{StaticResource OnErrorContainer}"/>
+        <SolidColorBrush x:Key="OnPrimaryBrush" Color="{StaticResource OnPrimary}"/>
+        <SolidColorBrush x:Key="OnPrimaryContainerBrush" Color="{StaticResource OnPrimaryContainer}"/>
+        <SolidColorBrush x:Key="OnSecondaryBrush" Color="{StaticResource OnSecondary}"/>
+        <SolidColorBrush x:Key="OnSecondaryContainerBrush" Color="{StaticResource OnSecondaryContainer}"/>
+        <SolidColorBrush x:Key="OnSurfaceBrush" Color="{StaticResource OnSurface}"/>
+        <SolidColorBrush x:Key="OnSurfaceVariantBrush" Color="{StaticResource OnSurfaceVariant}"/>
+        <SolidColorBrush x:Key="OnTertiaryBrush" Color="{StaticResource OnTertiary}"/>
+        <SolidColorBrush x:Key="OnTertiaryContainerBrush" Color="{StaticResource OnTertiaryContainer}"/>
+        <SolidColorBrush x:Key="OutlineBrush" Color="{StaticResource Outline}"/>
+        <SolidColorBrush x:Key="OutlineVariantBrush" Color="{StaticResource OutlineVariant}"/>
+        <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
+        <SolidColorBrush x:Key="PrimaryContainerBrush" Color="{StaticResource PrimaryContainer}"/>
+        <SolidColorBrush x:Key="ScrimBrush" Color="{StaticResource Scrim}"/>
+        <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
+        <SolidColorBrush x:Key="SecondaryContainerBrush" Color="{StaticResource SecondaryContainer}"/>
+        <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource Surface}"/>
+        <SolidColorBrush x:Key="SurfaceTintBrush" Color="{StaticResource SurfaceTint}"/>
+        <SolidColorBrush x:Key="SurfaceVariantBrush" Color="{StaticResource SurfaceVariant}"/>
+        <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>
+        <SolidColorBrush x:Key="TertiaryContainerBrush" Color="{StaticResource TertiaryContainer}"/>
+        <!-- Pinceles para Superficies adicionales -->
+        <SolidColorBrush x:Key="SurfaceBrightBrush" Color="{StaticResource SurfaceBright}"/>
+        <SolidColorBrush x:Key="SurfaceDimBrush" Color="{StaticResource SurfaceDim}"/>
+        <SolidColorBrush x:Key="SurfaceContainerBrush" Color="{StaticResource SurfaceContainer}"/>
+        <SolidColorBrush x:Key="SurfaceContainerHighBrush" Color="{StaticResource SurfaceContainerHigh}"/>
+        <SolidColorBrush x:Key="SurfaceContainerHighestBrush" Color="{StaticResource SurfaceContainerHighest}"/>
+        <SolidColorBrush x:Key="SurfaceContainerLowBrush" Color="{StaticResource SurfaceContainerLow}"/>
+        <SolidColorBrush x:Key="SurfaceContainerLowestBrush" Color="{StaticResource SurfaceContainerLowest}"/>
     </ResourceDictionary>
 
 </ResourceDictionary>

@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace TiendaApp.Resources
@@ -24,12 +20,22 @@ namespace TiendaApp.Resources
         private static void ChangeTheme(string themeKey)
         {
             var app = Application.Current;
-            var themeDict = app.Resources.MergedDictionaries[0];
+            
+            // Encontrar el diccionario principal que contiene los temas anidados
+            ResourceDictionary mainThemeDict = null;
+            foreach (var dict in app.Resources.MergedDictionaries)
+            {
+                if (dict.Contains("LightTheme") || dict.Contains("DarkTheme"))
+                {
+                    mainThemeDict = dict;
+                    break;
+                }
+            }
 
-            if (themeDict[themeKey] is ResourceDictionary newTheme)
+            if (mainThemeDict != null && mainThemeDict[themeKey] is ResourceDictionary newTheme)
             {
                 // Remover el tema actual
-                if (CurrentThemeDictionary != null)
+                if (CurrentThemeDictionary != null && app.Resources.MergedDictionaries.Contains(CurrentThemeDictionary))
                 {
                     app.Resources.MergedDictionaries.Remove(CurrentThemeDictionary);
                 }
@@ -42,8 +48,8 @@ namespace TiendaApp.Resources
 
         public static void Initialize()
         {
-            // Por defecto, tema claro
-            SetLightTheme();
+            // Por defecto, tema oscuro
+            SetDarkTheme();
         }
     }
 }
