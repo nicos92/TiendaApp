@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="resources\**" />
+    <EmbeddedResource Remove="resources\**" />
+    <None Remove="resources\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="DatabaseInitializer.cs" />
     <Compile Remove="PathHelper.cs" />
     <Compile Remove="SchemaSql.cs" />

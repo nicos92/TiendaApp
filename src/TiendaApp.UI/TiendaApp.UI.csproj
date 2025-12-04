@@ -1,6 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <Page Remove="resources\styles\ButtonStyles.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="resources\styles\ButtonStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TiendaApp.Servicio\TiendaApp.Servicio.csproj" />
     <ProjectReference Include="..\TiendaApp.Contrato\TiendaApp.Contrato.csproj" />
     <ProjectReference Include="..\TiendaApp.Modelo\TiendaApp.Modelo.csproj" />

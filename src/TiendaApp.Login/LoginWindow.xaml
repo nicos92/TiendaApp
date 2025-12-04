@@ -8,12 +8,74 @@
         Title="LoginWindow" Height="450" FontSize="16" Background="#FF191D21" Foreground="#FFF8F9FA" MinWidth="800" Width="800" MinHeight="450" MaxWidth="800" MaxHeight="450" Padding="2,2,2,2">
     <StackPanel Height="300" Width="700" Background="#FF212529">
         <Label Content="Inicio de Sesión" HorizontalAlignment="Center" Foreground="#FFF8F9FA" FontSize="36" Margin="0,8,0,0" FontWeight="Bold"/>
-        <Label Content="DNI:" Foreground="#FFF8F9FA" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,8,0,0"/>
-        <TextBox x:Name="TxtDni" TextWrapping="Wrap" Text="TextBox" Width="120" Background="#FF191D21" Foreground="#FFF8F9FA" BorderThickness="8,1,1,1" Margin="0,8,0,0"/>
-        <Label Content="Contraseña:" Foreground="#FFF8F9FA" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,8,0,0"/>
-        <PasswordBox x:Name="TxtPass" Width="120" Background="#FF191D21" Foreground="#FFF8F9FA"/>
-        <Button x:Name="BtnLogin" Content="Iniciar Sesión" Width="128" Margin="0,8,0,0" Background="#FF0D6EFD" Foreground="#FFF8F9FA" FontSize="18"/>
-        <Button x:Name="BtnRecuperarContrasena" Content="Recuperar Contraseña" Width="256" Background="#000D6EFD" Foreground="#FFF8F9FA" FontSize="16" Margin="0,8,0,0"/>
+        <Label Content="DNI:" Foreground="#FFF8F9FA" FontSize="20" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,8,0,0" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-105"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="TxtDni" TextWrapping="Wrap" Width="256" Background="#FF191D21" Foreground="#FFF8F9FA" BorderThickness="0,0,0,4" Margin="0,8,0,0"/>
+        <Label Content="Contraseña:" Foreground="#FFF8F9FA" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Center" Margin="0,8,0,0" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-72"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <PasswordBox x:Name="TxtPass" Width="256" Background="#FF191D21" Foreground="#FFF8F9FA" BorderThickness="0,0,0,4"/>
+        <Button x:Name="BtnLogin" Content="Iniciar Sesión" Width="156" Margin="0,8,0,0" Foreground="#FFF8F9FA" FontSize="18" BorderBrush="{x:Null}" Height="36">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,1">
+                    <GradientStop Color="#FF0D6EFD" Offset="0"/>
+                    <GradientStop Color="#FF0A58CA" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" 
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="Gray" 
+                    BorderThickness="1"
+                    CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#FF4CAF50"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="DarkGreen"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="BtnRecuperarContrasena" Content="Recuperar Contraseña" Width="174" Background="#000D6EFD" Foreground="#FFF8F9FA" FontSize="16" Margin="0,8,0,0" BorderBrush="{x:Null}">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" 
+        Background="{TemplateBinding Background}"
+        BorderBrush="Gray" 
+        BorderThickness="1"
+        CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                      VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#FF4CAF50"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="DarkGreen"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </StackPanel>
 
 </Window>
