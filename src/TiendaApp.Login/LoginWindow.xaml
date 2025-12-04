@@ -5,77 +5,101 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TiendaApp.Login"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="500" FontSize="16" Background="{DynamicResource SurfaceDimBrush}" Foreground="{DynamicResource OnSurfaceBrush}" MinWidth="800" Width="800" MinHeight="500" MaxWidth="800" MaxHeight="500" Padding="2,2,2,2">
-    <StackPanel Height="400" Width="700" Background="{DynamicResource SurfaceContainerBrush}" VerticalAlignment="Center" HorizontalAlignment="Center">
-        <Label Content="Inicio de Sesión" HorizontalAlignment="Center" Foreground="{DynamicResource OnSurfaceBrush}" FontSize="36" Margin="0,48,0,8" FontWeight="Bold"/>
-        <Label Content="DNI:" Foreground="{DynamicResource OnSurfaceBrush}" FontSize="20" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,8,0,0" RenderTransformOrigin="0.5,0.5">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform X="-105"/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <TextBox x:Name="TxtDni" TextWrapping="Wrap" Width="256" Background="{DynamicResource SurfaceDimBrush}" Foreground="{DynamicResource OnSurfaceBrush}" BorderThickness="1,1,1,4" Margin="0,8,0,0"/>
-        <Label Content="Contraseña:" Foreground="{DynamicResource OnSurfaceBrush}" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Center" Margin="0,8,0,0" RenderTransformOrigin="0.5,0.5">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform X="-72"/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <PasswordBox x:Name="TxtPass" Width="256" Background="{DynamicResource SurfaceDimBrush}" Foreground="{DynamicResource OnSurfaceBrush}" BorderThickness="1,1,1,4"/>
-        <Button x:Name="BtnLogin" Content="Iniciar Sesión" Width="156" Margin="0,8,0,0" Foreground="{DynamicResource OnPrimaryContainerBrush}" FontSize="20" FontWeight="Bold" BorderBrush="{x:Null}" Height="36">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="1,0" StartPoint="0,1">
-                    <GradientStop Color="{DynamicResource PrimaryContainer}" Offset="0"/>
-                    <GradientStop Color="{DynamicResource InversePrimary}" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
+        Title="Casa Calise" Height="500" FontSize="16" Background="{DynamicResource SurfaceDimBrush}" Foreground="{DynamicResource OnSurfaceBrush}" MinWidth="800" Width="800" MinHeight="500" MaxWidth="800" MaxHeight="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/lightning-fill.png">
+    <StackPanel>
+        <Button x:Name="BtnTheme" Height="24" Width="24" HorizontalAlignment="Right" Margin="4,4,4,4" Opacity="0.905" Foreground="{DynamicResource OnTertiaryContainerBrush}" Click="Button_Click" Cursor="Hand" Background="{x:Null}" >
+            <Button.Content>
+                <Image x:Name="ImgTheme" Width="24" Height="24" Source="/moon-fill.png"/>
+            </Button.Content>
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border x:Name="border" 
                     Background="{TemplateBinding Background}"
-                    BorderBrush="Gray" 
-                    BorderThickness="1"
+                   
                     CornerRadius="10">
                         <ContentPresenter HorizontalAlignment="Center" 
                                   VerticalAlignment="Center"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="{DynamicResource InversePrimaryBrush}"/>
-                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource InversePrimaryBrush}"/>
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource SecondaryContainerBrush}"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource SecondaryContainerBrush}"/>
+
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="BtnRecuperarContrasena" Content="Recuperar Contraseña" Width="174" Background="#000D6EFD" Foreground="#FFF8F9FA" FontSize="16" Margin="0,8,0,0" BorderBrush="{x:Null}">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border x:Name="border" 
+        <StackPanel Height="400" Width="700" Background="{DynamicResource SurfaceContainerBrush}" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="Inicio de Sesión" HorizontalAlignment="Center" Foreground="{DynamicResource OnSurfaceBrush}" FontSize="36" Margin="0,32,0,8" FontWeight="Bold"/>
+            <Label Content="DNI:" Foreground="{DynamicResource OnSurfaceBrush}" FontSize="20" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,8,0,0" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-105"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <TextBox x:Name="TxtDni" TextWrapping="Wrap" Width="256" Background="{DynamicResource SurfaceDimBrush}" Foreground="{DynamicResource OnSurfaceBrush}" BorderThickness="1,1,1,4" Margin="0,8,0,0" MaxLines="1" MaxLength="8" Padding="2,2,2,2"/>
+            <Label Content="Contraseña:" Foreground="{DynamicResource OnSurfaceBrush}" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Center" Margin="0,8,0,0" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-72"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <PasswordBox x:Name="TxtPass" Width="256" Background="{DynamicResource SurfaceDimBrush}" Foreground="{DynamicResource OnSurfaceBrush}" BorderThickness="1,1,1,4" Margin="0,0,0,16" MaxLength="16" Padding="2,2,2,2"/>
+            <Button x:Name="BtnLogin" Content="Iniciar Sesión" Width="156" Margin="0,16,0,16" Foreground="{DynamicResource OnPrimaryContainerBrush}" FontSize="20" FontWeight="Bold" BorderBrush="{x:Null}" Height="36" Cursor="Hand">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,0" StartPoint="0,1">
+                        <GradientStop Color="{DynamicResource PrimaryContainer}" Offset="0"/>
+                        <GradientStop Color="{DynamicResource InversePrimary}" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" 
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="Gray" 
+                    BorderThickness="1"
+                    CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{DynamicResource InversePrimaryBrush}"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource InversePrimaryBrush}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="BtnRecuperarContrasena" Content="Recuperar Contraseña" Width="174" Background="#000D6EFD" Foreground="{DynamicResource OnPrimaryContainerBrush}" FontSize="16" Margin="0,8,0,0" BorderBrush="{x:Null}" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" 
         Background="{TemplateBinding Background}"
         BorderBrush="Gray" 
         BorderThickness="1"
         CornerRadius="10">
-                        <ContentPresenter HorizontalAlignment="Center" 
+                            <ContentPresenter HorizontalAlignment="Center" 
                       VerticalAlignment="Center"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="{DynamicResource SecondaryContainerBrush}"/>
-                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource SecondaryContainerBrush}"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{DynamicResource SecondaryContainerBrush}"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource SecondaryContainerBrush}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
     </StackPanel>
-
 </Window>

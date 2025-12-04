@@ -1,8 +1,11 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 using TiendaApp.Contrato.IServicio;
 using TiendaApp.Modelo.Entities;
+using TiendaApp.Resources;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TiendaApp.Login
 {
@@ -12,6 +15,7 @@ namespace TiendaApp.Login
     public partial class LoginWindow : Window
     {
         private readonly IUsuarioServicio _usuarioServicio;
+        private bool theme;
 
         public LoginWindow(IUsuarioServicio usuarioServicio)
         {
@@ -72,6 +76,23 @@ namespace TiendaApp.Login
         private void BtnRecuperarContrasena_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Funcionalidad de recuperación de contraseña no implementada.", "Recuperar Contraseña", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (theme)
+            {
+                ThemeManager.SetDarkTheme();
+
+            }
+            else
+                ThemeManager.SetLightTheme();
+
+            ImgTheme.Source = theme
+           ? new BitmapImage(new Uri("pack://application:,,,/moon-fill.png"))
+           : new BitmapImage(new Uri("pack://application:,,,/brightness-high-fill.png"));
+
+            theme = !theme;
         }
     }
 }
