@@ -2,6 +2,10 @@
 
   <ItemGroup>
     <None Remove="brightness-high-fill.png" />
+    <None Remove="eye-slash.png" />
+    <None Remove="eye-slash.svg" />
+    <None Remove="eye.png" />
+    <None Remove="eye.svg" />
     <None Remove="lightning-fill.png" />
     <None Remove="moon-fill.png" />
     <None Remove="moon-fill.svg" />
@@ -25,10 +29,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="brightness-high-fill.png" />
-    <Resource Include="lightning-fill.png" />
-    <Resource Include="moon-fill.png" />
-    <Resource Include="moon-fill.svg" />
+    <Resource Include="resources\icons\brightness-high-fill.png" />
+    <Resource Include="resources\icons\eye-slash.png" />
+    <Resource Include="resources\icons\eye.png" />
+    <Resource Include="resources\icons\lightning-fill.png" />
+    <Resource Include="resources\icons\moon-fill.png" />
   </ItemGroup>
 
   <PropertyGroup>

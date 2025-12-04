@@ -89,10 +89,38 @@ namespace TiendaApp.Login
                 ThemeManager.SetLightTheme();
 
             ImgTheme.Source = theme
-           ? new BitmapImage(new Uri("pack://application:,,,/moon-fill.png"))
-           : new BitmapImage(new Uri("pack://application:,,,/brightness-high-fill.png"));
+           ? new BitmapImage(new Uri("pack://application:,,,/resources/icons/moon-fill.png"))
+           : new BitmapImage(new Uri("pack://application:,,,/resources/icons/brightness-high-fill.png"));
 
             theme = !theme;
         }
+
+        private void ToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var image = button.Content as System.Windows.Controls.Image;
+
+            if (TxtPass.Visibility != Visibility.Visible)
+            {
+                // Ocultar contraseña
+                TxtPass.Password = VisibleTxtPass.Text;
+                TxtPass.Visibility = Visibility.Visible;
+                VisibleTxtPass.Visibility = Visibility.Collapsed;
+
+                // Cambiar icono a ojo cerrado
+                image.Source = new BitmapImage(new Uri("pack://application:,,,/resources/icons/eye-slash.png"));
+            }
+            else
+            {
+                // Mostrar contraseña
+                VisibleTxtPass.Text = TxtPass.Password;
+                VisibleTxtPass.Visibility = Visibility.Visible;
+                TxtPass.Visibility = Visibility.Collapsed;
+
+                // Cambiar icono a ojo abierto
+                image.Source = new BitmapImage(new Uri("pack://application:,,,/resources/icons/eye.png"));
+            }
+        }
     }
+
 }
