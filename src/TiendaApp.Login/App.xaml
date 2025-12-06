@@ -3,11 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:TiendaApp.Login">
     <Application.Resources>
+        <!-- Elimina el ResourceDictionary anidado y pon directamente MergedDictionaries -->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!-- Referencia al diccionario de recursos del otro proyecto -->
                 <ResourceDictionary Source="pack://application:,,,/TiendaApp.Resources;component/AppThemes.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TiendaApp.Resources;component/styles/DictionaryStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
+            <!-- Puedes agregar recursos locales aquí si los necesitas -->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

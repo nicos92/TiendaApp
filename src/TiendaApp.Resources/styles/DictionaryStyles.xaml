@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <!-- Incluir todos los archivos de estilos aquí -->
+        <ResourceDictionary Source="ModernRoundedTextBox.xaml"/>
+        <ResourceDictionary Source="PasswordBox.xaml"/>
+        <ResourceDictionary Source="ButtonStyles.xaml"/>
+
+        <!-- Agregar otros estilos futuros aquí -->
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
