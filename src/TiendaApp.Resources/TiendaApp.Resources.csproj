@@ -8,13 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="controls\**" />
-    <EmbeddedResource Remove="controls\**" />
-    <None Remove="controls\**" />
-    <Page Remove="controls\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Page Remove="styles\ModernRoundedPanelStyle.xaml" />
   </ItemGroup>
 

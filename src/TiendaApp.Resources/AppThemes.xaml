@@ -34,6 +34,13 @@
         <Color x:Key="Tertiary">#7A507A</Color>
         <Color x:Key="TertiaryContainer">#FFD6FA</Color>
 
+        <!-- En tu diccionario de colores -->
+        <Color x:Key="Warning">#FFA500</Color>
+        <Color x:Key="Success">#4CAF50</Color>
+
+        <!-- Y los brushes correspondientes -->
+        <SolidColorBrush x:Key="WarningBrush" Color="{DynamicResource Warning}"/>
+        <SolidColorBrush x:Key="SuccessBrush" Color="{DynamicResource Success}"/>
         <!-- Superficies adicionales -->
         <Color x:Key="SurfaceBright">#FBF8FD</Color>
         <Color x:Key="SurfaceDim">#DBD9DD</Color>
@@ -116,6 +123,13 @@
         <Color x:Key="Tertiary">#EAB6E6</Color>
         <Color x:Key="TertiaryContainer">#603861</Color>
 
+        <Color x:Key="Warning">#FFA500</Color>
+        <Color x:Key="Success">#4CAF50</Color>
+
+        <!-- Y los brushes correspondientes -->
+        <SolidColorBrush x:Key="WarningBrush" Color="{DynamicResource Warning}"/>
+        <SolidColorBrush x:Key="SuccessBrush" Color="{DynamicResource Success}"/>
+        
         <!-- Superficies adicionales -->
         <Color x:Key="SurfaceBright">#39393C</Color>
         <Color x:Key="SurfaceDim">#131316</Color>

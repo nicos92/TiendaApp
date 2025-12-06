@@ -5,7 +5,10 @@ using System.Windows.Media.Imaging;
 using TiendaApp.Contrato.IServicio;
 using TiendaApp.Modelo.Entities;
 using TiendaApp.Resources;
+using TiendaApp.Resources.Controls;
+using TiendaApp.Resources.Helpers;
 using static System.Net.Mime.MediaTypeNames;
+using MessageBoxResult = TiendaApp.Resources.Controls.MessageBoxResult;
 
 namespace TiendaApp.Login
 {
@@ -39,16 +42,23 @@ namespace TiendaApp.Login
 
                 if (string.IsNullOrEmpty(dni) || string.IsNullOrEmpty(password))
                 {
-                    MessageBox.Show("Por favor, ingrese DNI y contraseña.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    
+                    MessageBoxHelper.ShowWarning("Por favor, ingrese DNI y contraseña.", "Advertencia");
                     return;
                 }
 
+                var result = MessageBoxHelper.ShowConfirm("¿Desea iniciar sesión con las credenciales proporcionadas?", "Confirmar inicio de sesión");
+                if (result != MessageBoxResult.OK)
+                {
+                    return; // El usuario canceló el inicio de sesión
+                }
                 // Buscar el usuario por DNI
                 Usuario? usuario = await _usuarioServicio.GetByDNIAsync(dni);
 
                 if (usuario == null)
                 {
-                    MessageBox.Show("DNI o contraseña incorrectos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    
+                    MessageBoxHelper.ShowError("DNI o contraseña incorrectos.", "Error");
                     return;
                 }
 
@@ -57,25 +67,28 @@ namespace TiendaApp.Login
 
                 if (usuarioValidado != null)
                 {
-                    MessageBox.Show($"¡Bienvenido, {usuario.Nombre} {usuario.Apellido}!", "Inicio de sesión exitoso", MessageBoxButton.OK, MessageBoxImage.Information);
+                   
+                    MessageBoxHelper.ShowSuccess("Inicio de sesión exitoso.", "Éxito");
                     // Aquí puedes abrir la ventana principal de la aplicación
                     // Por ahora simplemente cerramos esta ventana
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("DNI o contraseña incorrectos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBoxHelper.ShowError("DNI o contraseña incorrectos.", "Error");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al iniciar sesión: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                
+                MessageBoxHelper.ShowError("Ocurrió un error al intentar iniciar sesión.", "Error");
             }
         }
 
         private void BtnRecuperarContrasena_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Funcionalidad de recuperación de contraseña no implementada.", "Recuperar Contraseña", MessageBoxButton.OK, MessageBoxImage.Information);
+            
+            MessageBoxHelper.ShowInfo("Funcionalidad de recuperación de contraseña no implementada.", "Información");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

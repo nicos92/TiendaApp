@@ -1,0 +1,21 @@
+<Window x:Class="TiendaApp.Resources.Windows.CustomMessageBoxWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:TiendaApp.Resources.Controls"
+        Title="Mensaje" 
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown">
+
+    <!-- Fondo semitransparente -->
+    <Grid Background="#80000000">
+        <controls:CustomMessageBox x:Name="MessageBoxControl"
+                                   Width="400"
+                                   MaxWidth="600"
+                                   ResultSelected="MessageBoxControl_ResultSelected"/>
+    </Grid>
+</Window>
