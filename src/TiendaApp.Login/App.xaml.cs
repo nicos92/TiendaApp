@@ -3,10 +3,12 @@ using Microsoft.Extensions.Hosting;
 using System.Windows;
 using TiendaApp.Contrato.IRepositorio;
 using TiendaApp.Contrato.IServicio;
+using TiendaApp.Contrato.IWindow;
 using TiendaApp.Repositorio.DataInit;
 using TiendaApp.Repositorio.Repositorios;
 using TiendaApp.Resources;
 using TiendaApp.Servicio.Dominio;
+using TiendaApp.UI;
 
 namespace TiendaApp.Login
 {
@@ -30,11 +32,13 @@ namespace TiendaApp.Login
                     //// Registrar servicios
                     services.AddTransient<IUsuarioServicio, UsuarioServicio>();
                     services.AddTransient<IArticuloServicio, ArticuloServicio>();
-                    //services.AddTransient<IVentaServicio, VentaServicio>();
+                    services.AddTransient<IVentaServicio, VentaServicio>();
 
                     // Registrar ventanas
                     services.AddTransient<MainWindow>();
                     services.AddTransient<LoginWindow>();
+
+                    services.AddTransient<IWindowService, WindowService>();
                 })
                 .Build();
 
@@ -45,9 +49,14 @@ namespace TiendaApp.Login
             // Inicializar el ThemeManager después de que se configuren los servicios
             ThemeManager.Initialize();
 
+
             // Abrir ventana inicial (por ejemplo Login)
-            var login = HostApp.Services.GetRequiredService<LoginWindow>();
-            login.Show();
+            //var login = HostApp.Services.GetRequiredService<LoginWindow>();
+            //login.Show();
+
+            // Usar WindowService para abrir la primera ventana
+            var windowService = HostApp.Services.GetRequiredService<IWindowService>();
+            windowService.ShowLoginWindow();
 
             base.OnStartup(e);
         }

@@ -1,6 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <Compile Remove="MainWindow.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="brightness-high-fill.png" />
     <None Remove="eye-slash.png" />
     <None Remove="eye-slash.svg" />
@@ -9,6 +13,10 @@
     <None Remove="lightning-fill.png" />
     <None Remove="moon-fill.png" />
     <None Remove="moon-fill.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="MainWindow.xaml" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using TiendaApp.Contrato.IServicio;
+using TiendaApp.Contrato.IWindow;
 using TiendaApp.Modelo.Entities;
 using TiendaApp.Resources;
 using TiendaApp.Resources.Controls;
@@ -17,11 +18,13 @@ namespace TiendaApp.Login
     /// </summary>
     public partial class LoginWindow : Window
     {
+        public readonly IWindowService _windowServise;
         private readonly IUsuarioServicio _usuarioServicio;
         private bool theme;
 
-        public LoginWindow(IUsuarioServicio usuarioServicio)
+        public LoginWindow(IWindowService windowService, IUsuarioServicio usuarioServicio)
         {
+            _windowServise = windowService;
             _usuarioServicio = usuarioServicio;
             InitializeComponent();
             InitializeEventHandlers();
@@ -58,7 +61,7 @@ namespace TiendaApp.Login
                 if (usuario == null)
                 {
                     
-                    MessageBoxHelper.ShowError("DNI o contraseña incorrectos.", "Error");
+                    MessageBoxHelper.ShowError("DNI incorrecto.", "Error");
                     return;
                 }
 
@@ -71,6 +74,7 @@ namespace TiendaApp.Login
                     MessageBoxHelper.ShowSuccess("Inicio de sesión exitoso.", "Éxito");
                     // Aquí puedes abrir la ventana principal de la aplicación
                     // Por ahora simplemente cerramos esta ventana
+                    _windowServise.ShowMainWindow();
                     this.Close();
                 }
                 else
@@ -78,7 +82,7 @@ namespace TiendaApp.Login
                     MessageBoxHelper.ShowError("DNI o contraseña incorrectos.", "Error");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 
                 MessageBoxHelper.ShowError("Ocurrió un error al intentar iniciar sesión.", "Error");
